@@ -1,0 +1,175 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --primary: #2d5bff;
+  --primary-dark: #1c3fb3;
+  --accent: #ffd166;
+  --text: #1e2430;
+  --muted: #5e6a81;
+  --shadow: rgba(30, 36, 48, 0.12);
+  --border: #dde5f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #eef3ff 0%, #f9f3ff 100%);
+  color: var(--text);
+}
+
+.app {
+  width: min(92vw, 760px);
+  padding: 2rem 1.25rem 2.5rem;
+}
+
+.topbar {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+h1 {
+  margin: 0.4rem 0 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.game-card,
+.info-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: 0 14px 35px var(--shadow);
+}
+
+.game-card {
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.dice-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.dice {
+  width: 140px;
+  height: 140px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fff8db 0%, #ffd166 100%);
+  border: 3px solid #f7b900;
+  font-size: 4.5rem;
+  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.7), 0 16px 30px rgba(255, 209, 102, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.dice.rolling {
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-12deg) scale(1.04); }
+  50% { transform: rotate(12deg) scale(1.08); }
+  75% { transform: rotate(-8deg) scale(1.04); }
+}
+
+.roll-button {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.9rem 1.8rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 20px rgba(45, 91, 255, 0.22);
+}
+
+.roll-button:hover {
+  transform: translateY(-1px);
+}
+
+.roll-button:active {
+  transform: translateY(1px);
+}
+
+.result-box {
+  margin-top: 1.75rem;
+  background: #f7f9ff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.5rem 1.25rem;
+}
+
+.label {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+#promptTitle {
+  margin: 0 0 0.7rem;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+}
+
+#promptText {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.info-panel {
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.4rem;
+}
+
+.info-panel h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.info-panel ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 520px) {
+  .app {
+    padding-top: 1.25rem;
+  }
+
+  .game-card {
+    padding: 1.4rem 1rem;
+  }
+
+  .dice {
+    width: 120px;
+    height: 120px;
+    font-size: 4rem;
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Reflection Dice Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <p class="eyebrow">UNIV 1300</p>
+        <h1>Reflection Dice Game</h1>
+      </header>
+
+      <section class="game-card">
+        <div class="dice-wrap">
+          <div id="dice" class="dice" aria-live="polite">🎲</div>
+        </div>
+
+        <button id="rollButton" class="roll-button" type="button">
+          Roll the Dice
+        </button>
+
+        <div class="result-box">
+          <p class="label">Your reflection prompt:</p>
+          <h2 id="promptTitle">Press the button to begin</h2>
+          <p id="promptText">
+            Roll the dice and discover a quick reflection question.
+          </p>
+        </div>
+      </section>
+
+      <section class="info-panel">
+        <h3>How to play</h3>
+        <ol>
+          <li>Roll the dice.</li>
+          <li>Look at the number you get.</li>
+          <li>Answer the matching reflection question.</li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
